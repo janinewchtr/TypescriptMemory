@@ -1,0 +1,43 @@
+@use "variables" as *;
+
+@mixin center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin icon-size($width, $height) {
+  width: $width;
+  height: $height;
+  object-fit: contain;
+}
+
+@mixin button-hover-shadow {
+  &:hover {
+    background-color: var(--theme-hover-background);
+    border-color: var(--theme-primary);
+    box-shadow: 4px 4px 14px var(--theme-hover-shadow);
+  }
+}
+
+@mixin pop-in($delay: 0ms) {
+  animation: pop-in $animation-pop both;
+  animation-delay: $delay;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

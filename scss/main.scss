@@ -1,0 +1,21 @@
+@use "abstract/variables";
+@use "abstract/mixins";
+
+@use "vendor/fonts";
+
+@use "layout/game-board";
+
+@use "components/buttons";
+@use "components/cards";
+@use "components/score-board";
+@use "components/settings";
+
+@use "pages/home-page";
+@use "pages/settings-page";
+@use "pages/game-page";
+@use "pages/result-page";
+
+@use "themes/code-theme";
+@use "themes/food-theme";
+
+@use "components/exit-popup";

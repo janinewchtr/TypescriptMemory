@@ -1,0 +1,115 @@
+.exit-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  background-color: rgba(217, 217, 217, 0.85);
+
+  &__box {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 2rem;
+    width: 456px;
+    height: 256px;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    max-width: 24rem;
+    margin: 0;
+    color: #2f3230;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  &__button {
+    min-width: 9rem;
+    padding: 0.85rem 1.25rem;
+    font-family: "Red Rose", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 200ms ease-in-out, background-color 200ms ease-in-out,
+      box-shadow 200ms ease-in-out;
+
+    &--back {
+      color: #ffffff;
+      background-color: #63cdbb;
+      border: 2px solid #63cdbb;
+
+      &:hover {
+        background-color: #7ad8c9;
+        border-color: #7ad8c9;
+      }
+    }
+
+    &--exit {
+      color: #63cdbb;
+      background-color: #ffffff;
+      border: 2px solid #63cdbb;
+
+      &:hover {
+        background-color: #dff7f2;
+        box-shadow: 6px 6px 0 rgba(99, 205, 187, 0.28);
+      }
+    }
+  }
+
+  &.theme-food {
+    .exit-popup {
+      &__box {
+        border-radius: 2rem;
+      }
+
+      &__title {
+        color: #a95010;
+        font-family: "Caveat", cursive;
+        font-size: 2.25rem;
+        font-weight: 400;
+        line-height: 1.25;
+      }
+
+      &__button {
+        min-width: 10rem;
+        padding: 0.85rem 1rem;
+        border-radius: 0.75rem;
+        font-family: "Delius Unicase", cursive;
+        font-size: 1rem;
+        transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+
+        &--back {
+          color: #ffffff;
+          background-color: #ffae3d;
+          border-color: #f3832d;
+
+          &:hover {
+            color: #ffffff;
+            background-color: #f3832d;
+          }
+        }
+
+        &--exit {
+          color: #f3832d;
+          background-color: #fff9f2;
+          border-color: #f3832d;
+
+          &:hover {
+            color: #ffffff;
+            background-color: #f3832d;
+          }
+        }
+      }
+    }
+  }
+}

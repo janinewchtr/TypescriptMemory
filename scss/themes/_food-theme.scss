@@ -1,0 +1,64 @@
+@use "../abstract/variables" as *;
+
+.theme-food {
+  --theme-background: #ffffff;
+  --theme-panel: #ffffff;
+  --theme-panel-soft: #f1e5d7;
+
+  --theme-primary: #f3832d;
+  --theme-text: #a95010;
+
+  --theme-match-border: #f3832d;
+  --theme-match-shadow: rgba(243, 131, 45, 0.28);
+
+  --theme-blue: #0d86c9;
+  --theme-orange: #f3832d;
+
+  --theme-hover-background: #fff9f2;
+  --theme-hover-shadow: rgba(243, 131, 45, 0.28);
+
+  font-family: "Caveat", cursive;
+
+  .score-board {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: var(--theme-panel-soft);
+    border-radius: 0.75rem;
+
+    &__scores {
+      background-color: #fff9f2;
+      border-radius: 0.5rem;
+    }
+
+    &__current-icon {
+      padding: 0.25rem;
+      border-radius: 0.35rem;
+      box-sizing: border-box;
+
+      &--blue {
+        background-color: var(--theme-blue);
+      }
+
+      &--orange {
+        background-color: var(--theme-orange);
+      }
+    }
+
+    &__exit-button {
+      color: #f3832d;
+      background-color: #fff9f2;
+      border-color: #f3832d;
+      border-radius: 0.75rem;
+      font-family: "Delius Unicase", cursive;
+    }
+
+    @media (min-width: $breakpoint-medium) {
+      padding: 1.5rem 2rem;
+    }
+
+    @media (min-width: $breakpoint-large) {
+      padding: 2rem 2.5rem;
+    }
+  }
+}

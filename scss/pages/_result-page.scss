@@ -1,0 +1,254 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.result-page {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  background-color: #2f3230;
+  color: #ffffff;
+
+  &__title {
+    margin: 0 0 4.5rem;
+    color: #4dd5bc;
+    font-size: 8rem;
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 2px 2px 4px #ffffff, 8px 8px 0 rgba(0, 0, 0, 0.45),
+      4px 4px 8px rgba(66, 223, 196, 0.35);
+  }
+
+  &__label {
+    margin: 0 0 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__score-board {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+    background-color: #435c55;
+  }
+
+  &__score {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    &--blue {
+      color: #29aef6;
+    }
+
+    &--orange {
+      color: #ff8a3d;
+    }
+  }
+
+  &__player-icon {
+    width: 24px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  &--winner,
+  &--draw {
+    position: relative;
+    min-height: 100vh;
+    align-content: center;
+    overflow: hidden;
+  }
+
+  &__confetti {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    width: min(78vw, 980px);
+    transform: translateX(-50%);
+    pointer-events: none;
+
+    &--wide {
+      display: none;
+    }
+
+    @media (min-width: $breakpoint-wide) {
+      &--default {
+        display: none;
+      }
+
+      &--wide {
+        display: block;
+        width: 100%;
+        max-width: none;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0 0 1rem;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  &__winner {
+    margin: 0 0 3rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    @include pop-in(120ms);
+
+    &--blue {
+      color: #29aef6;
+    }
+
+    &--orange {
+      color: #ff8a3d;
+    }
+  }
+
+  &__winner-icon {
+    width: 130px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 3rem;
+    @include pop-in(260ms);
+  }
+
+  &__button {
+    padding: 0.75rem 1.5rem;
+    color: #ffffff;
+    background-color: #435c55;
+    border: 1px solid #42dfc4;
+    font-family: "Red Rose", Arial, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    @include pop-in(420ms);
+
+    &:hover {
+      background-color: #405a53;
+      border: 2px solid #42dfc4;
+      box-shadow: 2px 2px 8px rgba(232, 239, 69, 0.38);
+    }
+  }
+
+  &__draw-text {
+    margin: 0 0 0.5rem;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  &__draw-title {
+    margin: 0 0 2.5rem;
+    color: #4dd5bc;
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 2px 2px 4px #ffffff, 6px 6px 0 rgba(0, 0, 0, 0.45),
+      4px 4px 8px rgba(66, 223, 196, 0.35);
+    @include pop-in(120ms);
+  }
+
+  &__draw-icon {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+    margin-bottom: 3rem;
+    @include pop-in(260ms);
+  }
+}
+
+.result-page.theme-food {
+  background-color: #ffffff;
+  color: #f3832d;
+  font-family: "Caveat", cursive;
+
+  .result-page {
+    &__title {
+      color: #ffffff;
+      font-family: "Delius Unicase", cursive;
+      font-size: 3rem;
+      font-weight: 400;
+      text-shadow: none;
+      text-transform: uppercase;
+    }
+
+    &__label {
+      color: #fff9f2;
+      font-size: 1rem;
+    }
+
+    &__score-board {
+      background-color: #fff9f2;
+    }
+
+    &__score {
+      font-family: "Caveat", cursive;
+      font-size: 1rem;
+    }
+
+    &__text {
+      color: #f3832d;
+      font-size: 2.5rem;
+    }
+
+    &__draw-text {
+      color: #f3832d;
+      font-size: 40px;
+    }
+
+    &__winner {
+      color: #f3832d;
+      font-family: "Caveat", cursive;
+      font-size: 5rem;
+      font-weight: 400;
+      text-shadow: none;
+      text-transform: none;
+    }
+
+    &__draw-title {
+      color: #f3832d;
+      font-family: "Caveat", cursive;
+      font-size: 128px;
+      font-weight: 400;
+      text-shadow: none;
+      text-transform: none;
+    }
+
+    &__icon-frame {
+      display: grid;
+      place-items: center;
+      width: 312px;
+      height: 285px;
+      margin-bottom: 1.5rem;
+      background-color: #fff9f2;
+      box-shadow: 0 0.25rem 0.75rem rgba(243, 131, 45, 0.18);
+      @include pop-in(260ms);
+    }
+
+    &__winner-icon,
+    &__draw-icon {
+      width: 312px;
+      height: 285px;
+      margin-bottom: 0;
+      object-fit: contain;
+    }
+
+    &__button {
+      padding: 0.35rem 0.75rem;
+      color: #ffffff;
+      background-color: #f3832d;
+      border: 0;
+      border-radius: 0.35rem;
+      font-family: "Delius Unicase", cursive;
+      font-size: 0.75rem;
+    }
+  }
+
+  &.result-page:not(.result-page--winner):not(.result-page--draw) {
+    background-color: #f3832d;
+  }
+}

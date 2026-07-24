@@ -1,0 +1,40 @@
+@use "../abstract/variables" as *;
+
+.game-page {
+  --card-size: 62px;
+  --card-gap: 8px;
+
+  min-height: 100vh;
+  background-color: var(--theme-background);
+
+  &__panel {
+    min-height: 100vh;
+    padding: 1rem;
+    background-color: var(--theme-panel);
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    --card-size: 96px;
+    --card-gap: 12px;
+
+    &__panel {
+      padding: 2rem 3rem;
+    }
+  }
+
+  @media (min-width: $breakpoint-large) {
+    --card-size: 120px;
+    --card-gap: 16px;
+
+    &__panel {
+      padding: 3rem 5rem;
+    }
+  }
+
+  @media (min-width: $breakpoint-wide) {
+    &__panel {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+  }
+}

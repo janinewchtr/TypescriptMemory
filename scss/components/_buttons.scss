@@ -1,0 +1,70 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border: 0;
+  font-family: $font-family-main;
+  font-weight: 700;
+  cursor: pointer;
+
+  &--play {
+    padding: 1.1rem 1.5rem;
+    color: #2f3230;
+    background-color: $button-yellow;
+    font-size: 1.75rem;
+    transition: transform $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 4px 4px 14px var(--theme-hover-shadow);
+
+      .button__icon {
+        transform: rotate(-24deg) scale(1.08);
+      }
+
+      .button__arrow {
+        transform: translateX(0.42rem) scale(1.2);
+      }
+    }
+  }
+
+  &--settings-start {
+    padding: 0.75rem 1.25rem;
+    color: #8f8f8f;
+    background-color: #e4e4e4;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: not-allowed;
+    transition: background-color $transition-fast, box-shadow $transition-fast,
+      color $transition-fast;
+
+    &:not(:disabled) {
+      color: #2f3230;
+      background-color: $button-yellow;
+      cursor: pointer;
+    }
+
+    &:not(:disabled):hover {
+      box-shadow: 3px 3px 10px rgba(232, 239, 69, 0.45);
+    }
+  }
+
+  &__icon {
+    width: 28px;
+    height: 22px;
+    object-fit: contain;
+    transition: transform $transition-fast;
+    transform-origin: center;
+  }
+
+  &__arrow {
+    font-size: 1.75rem;
+    line-height: 1;
+    transition: transform $transition-fast;
+    transform-origin: center;
+  }
+}

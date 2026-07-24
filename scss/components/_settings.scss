@@ -1,0 +1,85 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.settings-form {
+  display: grid;
+  gap: 2.5rem;
+
+  &__group {
+    display: grid;
+    gap: 0.65rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  &__legend {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  &__icon {
+    @include icon-size(24px, 24px);
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-left: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  &__radio {
+    appearance: none;
+    display: grid;
+    place-content: center;
+    width: $settings-radio-size;
+    height: $settings-radio-size;
+    margin: 0;
+    border: 3px solid $settings-option-color;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      width: $settings-radio-dot-size;
+      height: $settings-radio-dot-size;
+      border-radius: 50%;
+      background-color: $settings-option-color;
+      transform: scale(0);
+      transition: transform $transition-fast;
+    }
+
+    &:checked::before {
+      transform: scale(1);
+    }
+  }
+
+  &__option-text {
+    font-weight: 400;
+  }
+
+  &__selected-line {
+    width: $settings-selected-line-width;
+    height: auto;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: opacity $transition-fast, transform $transition-fast;
+  }
+
+  &__radio:checked ~ &__option-text {
+    font-weight: 700;
+  }
+
+  &__radio:checked ~ &__selected-line {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}

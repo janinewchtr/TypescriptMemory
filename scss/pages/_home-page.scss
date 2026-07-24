@@ -1,0 +1,46 @@
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--theme-background);
+  color: var(--theme-text);
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .button--play {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  &__eyebrow {
+    margin: 0 0 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  &__title {
+    margin: 0 0 4rem;
+    color: var(--theme-text);
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__controller {
+    position: absolute;
+    left: -2rem;
+    bottom: -2rem;
+    width: 24rem;
+    opacity: 1;
+    transform: rotate(-12deg);
+    pointer-events: none;
+  }
+}

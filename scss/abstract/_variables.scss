@@ -1,0 +1,31 @@
+$font-family-main: "Red Rose", Arial, sans-serif;
+
+$card-size: 120px;
+$card-gap: 16px;
+
+$player-icon-width: 24px;
+$player-icon-height: 20px;
+
+$current-player-icon-width: 28px;
+$current-player-icon-height: 24px;
+
+$exit-icon-size: 16px;
+
+$transition-fast: 200ms ease-in-out;
+$transition-card: 300ms ease-in-out;
+
+$z-index-confetti: 1;
+
+$animation-pop: 520ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+$button-yellow: #f0ea6e;
+
+$settings-radio-size: 1.4rem;
+$settings-radio-dot-size: 0.45rem;
+$settings-selected-line-width: 4.5rem;
+$settings-option-color: #2f3230;
+
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+$breakpoint-extra-large: 1200px;
+$breakpoint-wide: 1400px;
