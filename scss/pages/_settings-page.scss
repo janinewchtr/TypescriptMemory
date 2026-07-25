@@ -107,42 +107,39 @@
 
   @media (min-width: $breakpoint-wide) {
     .settings-form {
-      gap: 1.5rem;
-
-      &__group {
-        gap: 0.35rem;
-      }
-
+      gap: 1.75rem;
+  
       &__legend {
-        gap: 0.35rem;
-        margin-bottom: 0.25rem;
-        font-size: 0.75rem;
+        font-size: 0.95rem;
       }
-
-      &__icon {
-        width: 14px;
-        height: 14px;
-      }
-
+  
       &__option {
-        gap: 0.4rem;
-        padding-left: 1rem;
-        font-size: 0.7rem;
+        font-size: 0.85rem;
       }
-
+  
+      &__icon {
+        width: 18px;
+        height: 18px;
+      }
+  
       &__radio {
-        width: 0.7rem;
-        height: 0.7rem;
-        border-width: 1.5px;
-
+        width: 0.9rem;
+        height: 0.9rem;
+  
         &::before {
-          width: 0.25rem;
-          height: 0.25rem;
+          width: 0.35rem;
+          height: 0.35rem;
         }
       }
-
-      &__selected-line {
-        width: 3rem;
+    }
+  
+    .settings-page {
+      &__title {
+        font-size: 1.9rem;
+      }
+  
+      &__steps {
+        font-size: 0.8rem;
       }
     }
   }
